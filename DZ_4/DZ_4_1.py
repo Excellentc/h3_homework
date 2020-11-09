@@ -12,7 +12,7 @@ def validate_password(password):
     if valid_password_lett_numbe(password):
         if validate_letters_even(password):
             if validate_numbers_odd(password):
-                pass
+                return True
             else:
                 print("Amounts of numbers not odd")
         else:
@@ -52,4 +52,4 @@ def validate_numbers_odd(input_str):
 
 
 password_user = input("Enter password : ")
-validate_password(password_user)
+print(validate_password(password_user))
