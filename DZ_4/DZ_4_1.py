@@ -19,7 +19,7 @@ def validate_password(password):
             print("Amounts of letters not even")
     else:
         print("You password have not correct symbols")
-    pass
+
 
 
 def valid_password_lett_numbe(password):
