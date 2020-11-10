@@ -44,7 +44,8 @@ def mix_strings(str1, str2):
     Дописать функцию, которая будет принимать 2 строки и вставлять вторую
     в середину первой
     """
-    result_str = str1[0: len(str1)//2] + str2 + str1[len(str1)//2:]
+    # result_str = str1[0: len(str1)//2] + str2 + str1[len(str1)//2:]
+    result_str = f"{str1[0: len(str1)//2]}{str2}{str1[len(str1)//2:]}"
     return result_str
 
 
@@ -53,8 +54,8 @@ def even_int_generator():
     Сгенерировать список из диапазона чисел от 0 до 100 и записать
     в результирующий список только четные числа.
     """
-    x = [i for i in range(1, 100)]
-    even_int_list = [i for i in x if i % 2 == 0]
+    list1 = [i for i in range(1, 100)]
+    even_int_list = [i for i in list1 if i % 2 == 0]
     return even_int_list
 
 
