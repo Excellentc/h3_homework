@@ -4,10 +4,10 @@ def catalog_finder(url_list):
     Дописать функцию, которая принимает список URL, а возвращает
     список только тех URL, в которых есть /catalog/
     """
-    result_list = []
-    for i in url_list:
-        if "/catalog/" in i:
-            result_list.append(i)
+    # for i in url_list:
+    #     if "/catalog/" in i:
+    #         result_list.append(i)
+    result_list = [item for item in url_list if "/catalog/" in item]
     return result_list
 
 
@@ -16,11 +16,11 @@ def get_str_center(input_str):
     Дописать функцию, которая вернет Х символов из середины строки
     (2 для четного кол-ва символов, 3 - для нечетного).
     """
-    c = len(input_str )//2
+    middle_point = len(input_str)//2
     if len(input_str) % 2 == 0:
-        output_str = input_str[c - 1: c + 1]
+        output_str = input_str[middle_point - 1: middle_point + 1]
     else:
-        output_str = input_str[c - 1: c + 2]
+        output_str = input_str[middle_point - 1: middle_point + 2]
     return output_str
 
 
@@ -33,8 +33,9 @@ def count_symbols(input_str):
     output_dict = {}
     input_str = input_str.replace(' ', '').lower()
     for i in input_str:
-        x = input_str.count(i)
-        output_dict[i] = x
+        # x = input_str.count(i)
+        # output_dict[i] = x
+        output_dict[i] = input_str.count(i)
     return output_dict
 
 
@@ -43,7 +44,7 @@ def mix_strings(str1, str2):
     Дописать функцию, которая будет принимать 2 строки и вставлять вторую
     в середину первой
     """
-    result_str = str1[0: len(str1 )//2] + str2 + str1[len(str1 )//2:]
+    result_str = str1[0: len(str1)//2] + str2 + str1[len(str1)//2:]
     return result_str
 
 
@@ -70,7 +71,7 @@ if us_inp == 1:
         print("Return url_list, with folder /catalog/", catalog_finder(url_list_enter))
     elif z1 == 2:
         url_list_enter = ["c:/asdf/asd/catalog/sefv.ed", "c:/asdf/asd/cat/sefv.ed",
-                            "c:/asdf/asd/catalog/sev.ed", "c:/asdf/asd/cata/sefv.ed"]
+                        "c:/asdf/asd/catalog/sev.ed", "c:/asdf/asd/cata/sefv.ed"]
         print("My list_url", url_list_enter)
         print("Return url_list, with folder /catalog/", catalog_finder(url_list_enter))
     else:
